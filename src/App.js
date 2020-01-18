@@ -9,7 +9,7 @@ import SignInAndSignUp from './Pages/Sign-in-and-sign-up/Sign-in-and-sign-up.com
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
