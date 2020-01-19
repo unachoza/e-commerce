@@ -23,11 +23,16 @@ class App extends Component {
       
     })
   }
+
+  componentWillUnmount() {
+    
+  }
   render() {
     console.log(this.state)
     return (
       <div className="app">
-        <Header />
+
+        <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />

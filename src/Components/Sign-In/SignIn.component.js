@@ -24,7 +24,7 @@ class SignIn extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password} = this.state;
     return (
       <div className="sign-in">
         <h2>I already have an account</h2>
@@ -33,7 +33,7 @@ class SignIn extends Component {
           <FormInput type="email" name="email" value={email} handleChange={this.handleChange} required label="email" />
           <FormInput type="password" name="password" value={password} handleChange={this.handleChange} required label="password" />
           <CustomButton type="submit" >Sign In</CustomButton>
-          <CustomButton onClick={signInWithGoogle}>Sign In with Google</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign In with Google</CustomButton>
         </form>
       </div>
     );
