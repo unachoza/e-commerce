@@ -53,16 +53,16 @@ class SignUp extends Component {
             type="text"
             name="displayName"
             value={displayName}
-            onChange={this.onChange}
+            onChange={this.handleChange}
             label="Display Name"
             required
           />
-          <FormInput type="email" name="email" value={email} onChange={this.onChange} label="email" required />
+          <FormInput type="email" name="email" value={email} onChange={this.handleChange} label="email" required />
           <FormInput
             type="password"
             name="password"
             value={password}
-            onChange={this.onChange}
+            onChange={this.handleChange}
             label="Password"
             required
           />
@@ -70,7 +70,7 @@ class SignUp extends Component {
             type="password"
             name="confirm password"
             value={confirmPassword}
-            onChange={this.onChange}
+            onChange={this.handleChange}
             label="Confirm Password"
             required
           />
