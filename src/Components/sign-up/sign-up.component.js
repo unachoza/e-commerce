@@ -24,7 +24,8 @@ class SignUp extends Component {
       return;
     }
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+      const { user } = await
+        auth.createUserWithEmailAndPassword(email, password);
       await createUserProfileDocument(user, { displayName });
 
       this.setState({
@@ -68,11 +69,10 @@ class SignUp extends Component {
           />
           <FormInput
             type="password"
-            name="confirm password"
+            name="confirmPassword"
             value={confirmPassword}
             onChange={this.handleChange}
             label="Confirm Password"
-            
           />
           <CustomButton type="submit">SIGN UP</CustomButton>
         </form>
