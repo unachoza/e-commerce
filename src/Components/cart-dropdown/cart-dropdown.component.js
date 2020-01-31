@@ -1,4 +1,3 @@
-  
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -11,17 +10,17 @@ import { toggleCartHidden } from '../../redux/cart/cart.actions.js';
 
 import './cart-dropdown.styles.scss';
 
-export const CartDropdown = ({items}) => (
+export const CartDropdown = ({ cartItems }) => (
   <div className="cart-dropdown">
     <div className="cart-items">
-
+      {cartItems.length ? cartItems.map(cartItems => <CartItem key={cartItems.id} cartItems={cartItems} />) : null}
     </div>
     <CustomButton>Go to Checkout</CustomButton>
   </div>
-)
+);
 
-// const mapStateToProps = () => ({
-//   hidden: 
-// })
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+  cartItems,
+});
 
-export default CartDropdown
+export default connect(mapStateToProps)(CartDropdown);
