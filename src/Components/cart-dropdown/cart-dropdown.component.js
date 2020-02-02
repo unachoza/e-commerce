@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
+import {toggleCartHidden} from '../../redux/cart/cart.actions'
 
 import './cart-dropdown.styles.scss';
 
@@ -17,7 +18,11 @@ export const CartDropdown = ({ cartItems, history, dispatch }) => (
         <span className="empty-message">Your Cart Is Empty</span>
       )}
     </div>
-    <CustomButton onClick={() => history.push('/checkout')}>Go to Checkout</CustomButton>
+    <CustomButton onClick={() => {
+      history.push('/checkout');
+      dispatch(toggleCartHidden())
+
+    }}>Go to Checkout</CustomButton>
   </div>
 );
 
