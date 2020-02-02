@@ -10,7 +10,7 @@ import { toggleCartHidden } from '../../redux/cart/cart.actions.js';
 
 import './cart-dropdown.styles.scss';
 
-export const CartDropdown = ({ cartItems }) => (
+export const CartDropdown = ({ cartItems, history, dispatch }) => (
   <div className="cart-dropdown">
     <div className="cart-items">
       {cartItems.length ? cartItems.map(cartItems => <CartItem key={cartItems.id} cartItems={cartItems} />) : null}
@@ -23,4 +23,4 @@ const mapStateToProps = ({ cart: { cartItems } }) => ({
   cartItems,
 });
 
-export default connect(mapStateToProps)(CartDropdown);
+export default withRouter(connect(mapStateToProps)(CartDropdown));

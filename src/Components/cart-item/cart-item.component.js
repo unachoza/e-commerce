@@ -2,10 +2,11 @@ import React from 'react';
 import CartIcon from '../cart-icon/cart-icon.component';
 import './cart-item.styles.scss';
 import { connect } from 'react-redux';
-import { withRouter } from 'react';
 
-const CartItem = ({ item: { imageUrl, name, price, quantity } }) => (
-  <div className="cart-item">
+const CartItem = ({ item: { imageUrl, name, price, quantity } }) => {
+  console.log("thisisiwhat i am looking for", imageUrl, name, price, quantity)
+  return (
+    <div className="cart-item">
     <img src={imageUrl} alt="" />
     <div className="item-details">
       <span className="name">{name}</span>
@@ -14,8 +15,9 @@ const CartItem = ({ item: { imageUrl, name, price, quantity } }) => (
       </span>
     </div>
   </div>
-);
+  )
+}
+ 
 
-const mapStateToProps = () => {};
 
-export default connect(mapStateToProps)(CartItem);
+export default (CartItem);

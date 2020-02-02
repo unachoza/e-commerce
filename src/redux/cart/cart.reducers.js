@@ -1,5 +1,4 @@
 import CartActionTypes from './cart.types';
-import { act } from 'react-dom/test-utils';
  import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 const INITIAL_STATE = {
