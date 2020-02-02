@@ -13,7 +13,7 @@ import './cart-dropdown.styles.scss';
 export const CartDropdown = ({ cartItems, history, dispatch }) => (
   <div className="cart-dropdown">
     <div className="cart-items">
-      {cartItems.length ? cartItems.map(cartItems => <CartItem key={cartItems.id} cartItems={cartItems} />) : null}
+      {cartItems.length ? cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem} />) : null}
     </div>
     <CustomButton>Go to Checkout</CustomButton>
   </div>
