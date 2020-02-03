@@ -1,18 +1,15 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { createStructuredSelector } from 'reselect'
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../redux/user/user.selector';
 
-import './account.styles.scss'
- 
+import './account.styles.scss';
 
-const AccountPage = ({currentUser}) => (
-  <div className="account-page">
-    Hello,  {currentUser.displayName} this is your Account
-  </div>
-)
+const AccountPage = ({ currentUser }) => (
+  <div className="account-page">Hello, {currentUser.displayName} this is your Account</div>
+);
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
 
-export default connect(mapStateToProps)(AccountPage)
+export default connect(mapStateToProps)(AccountPage);
