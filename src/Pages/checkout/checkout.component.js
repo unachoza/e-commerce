@@ -5,6 +5,7 @@ import { createStructuredSelector} from 'reselect'
 import { withRouter } from 'react-router-dom'
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors'
 import CheckoutItem from '../../Components/checkout-item/checkout-item.component'
+import StripeButton from '../../Components/stripe-button/stripe-button.component'
 
 const CheckoutPage = ({cartItems, total}) => (
   <div className="checkout-page">
@@ -33,6 +34,7 @@ const CheckoutPage = ({cartItems, total}) => (
     {cartItems.map(cartItem =>
       <CheckoutItem key={cartItem.id} cartItem={cartItem}/>)}
     <div className="total">TOTAL: ${total}</div>
+    <StripeButton price={total} />
   </div>
 );
 
