@@ -11,7 +11,7 @@ const StripeButton = ({ price }) => {
   return (
     <StripeCheckout
       label="PAY NOW"
-      name="Clothing"
+      name="PINNACLE Clothing"
       billingAddress
       shippingAddress
       image="http://svgshare.com/i/CUz.svg"
