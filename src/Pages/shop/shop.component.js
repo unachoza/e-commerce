@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SHOP_DATA from './shop.data';
+import SHOP_DATA from '../../redux/shop/shop.data';
 import CollectionsPreview from '../../Components/collections-preview/collections-preview.component';
 
 class ShopPage extends Component {
