@@ -1,8 +1,6 @@
 import React from 'react';
 import './checkout-item.styles.scss';
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { addItem, removeItem , clearItemFromCart} from '../../redux/cart/cart.actions';
 
 const CheckoutItem = ({ cartItem, addItem, removeItem, clearItem }) => {
@@ -28,9 +26,7 @@ const CheckoutItem = ({ cartItem, addItem, removeItem, clearItem }) => {
     </div>
   );
 };
-// const mapStateToProps = createStructuredSelector({
-// cartItems: selectCartItems
-// })}
+
 
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item)),
