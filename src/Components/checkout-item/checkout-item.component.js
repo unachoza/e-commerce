@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { addItem, removeItem , clearItemFromCart} from '../../redux/cart/cart.actions';
 
-const CheckoutItem = ({ cartItem, addItem, removeItem, clearItemFromCart }) => {
+const CheckoutItem = ({ cartItem, addItem, removeItem, clearItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   return (
     <div className="checkout-item">
@@ -24,7 +24,7 @@ const CheckoutItem = ({ cartItem, addItem, removeItem, clearItemFromCart }) => {
       </span>
      
       <span className="price">{price}</span>
-      <div className="remove-button" onClick={() => clearItemFromCart(cartItem)}>&#10005;</div>
+      <div className="remove-button" onClick={() => clearItem(cartItem)}>&#10005;</div>
     </div>
   );
 };
@@ -35,7 +35,7 @@ const CheckoutItem = ({ cartItem, addItem, removeItem, clearItemFromCart }) => {
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item)),
   removeItem: item => dispatch(removeItem(item)),
-  clearItemFromCart: item => dispatch(clearItemFromCart(item))
+  clearItem: item => dispatch(clearItemFromCart(item))
 });
 
 export default connect(null, mapDispatchToProps)(CheckoutItem);
