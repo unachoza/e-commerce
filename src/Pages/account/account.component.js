@@ -6,7 +6,7 @@ import { selectCurrentUser } from '../../redux/user/user.selector';
 import './account.styles.scss';
 
 const AccountPage = ({ currentUser }) => (
-  <div className="account-page">Hello, {currentUser.displayName} this is your Account</div>
+  <div className="account-page">Hello, {currentUser.displayName.toUpperCase()} this is your Account</div>
 );
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
