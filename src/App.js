@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './Pages/homepage/Homepage';
 import ShopPage from './Pages/shop/shop.component';
 import AccountPage from './Pages/account/account.component'
+import ContactPage from './Pages/contact/contact.components'
 import Header from './Components/header/Header.component';
 import SignInAndSignUp from './Pages/Sign-in-and-sign-up/Sign-in-and-sign-up.component';
 import CheckoutPage from './Pages/checkout/checkout.component'
@@ -43,6 +44,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
+          <Route path="/contact" component={ContactPage} />
           <Route
             exact
             path="/signin"
