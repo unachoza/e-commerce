@@ -1,7 +1,47 @@
-import React from 'react'
-import './my-size.styles.scss'
+import React, { Component } from 'react';
+import './my-size.styles.scss';
+import CustomButton from '../custom-button/custom-button.component';
+import FormInput from '../form-input/form-input.component';
 
-const MySize = () => <div className="my-size">MY SIZE</div>
+class MySize extends Component {
+  constructor() {
+    super();
+    this.state = {
+      height: null,
+      weight: null,
+      preference: null,
+    };
+  }
 
+  handleChange = () => {
+    console.log('clicked');
+  };
+  render() {
+    const { handleChange } = this;
+    return (
+      <div>
+        <div className="mysize-title">
+          <div>MY SIZE</div>
+          <CustomButton type="submit">WHAT'S MY SIZE </CustomButton>
+        </div>
+        {/* // onclick to model open to size "quiz" */}
+        <div>We help you find the right size</div>
+        <div className="sub-title">We calculate the perfect fit based on your unique measurements</div>
+      <div className="uclw-form">
+       <div>MEASUREMENTS</div>
+          <FormInput type="text" label="Height" value="" onChange={handleChange} label="height" required />
+          <FormInput type="text" label="weigth" value="" onChange={handleChange} label="Weight" required />
+          <FormInput type="text" label="Preference" value="" onChange={handleChange} label="Preference" required />
+        </div>
+      </div>
+    );
+  }
+}
 
-export default MySize
+export default MySize;
+
+/* <img
+      src="https://static.zara.net/stdstatic/1.142.1-b.3/images/size-recommend.svg"
+      classlabel="size-recommend-icon _size-recommend-icon"
+      alt="Find Size"
+    /> */
