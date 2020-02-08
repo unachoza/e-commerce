@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Dialog from 'react-dialog';
-class CustomDialog extends React.Component {
-  constructor() {
-    super();
+import CustomButton from '../custom-button/custom-button.component';
+import './custom-dialog.styles.scss';
+
+class CustomDialog extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       isDialogOpen: false,
     };
@@ -15,9 +18,8 @@ class CustomDialog extends React.Component {
   render() {
     return (
       <div className="container">
-        <button type="button" onClick={this.openDialog}>
-          Open Dialog
-        </button>
+        <CustomButton onClick={this.openDialog}>What's My Size</CustomButton>
+
         {this.state.isDialogOpen && (
           <Dialog
             title="Dialog Title"
@@ -30,8 +32,8 @@ class CustomDialog extends React.Component {
               },
             ]}
           >
-            <h1>Dialog Content</h1>
-            <p>More Content. Anything goes here</p>
+        <div style={{ width: "100%", flexDirection : 'column'}}>Dialog Content
+            More Content. Anything goes here</div>
           </Dialog>
         )}
       </div>
@@ -39,4 +41,4 @@ class CustomDialog extends React.Component {
   }
 }
 
-export default CustomDialog
+export default CustomDialog;

@@ -1,0 +1,39 @@
+.ui-dialog-content {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin: 0 0 0 600px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.ui-dialog-content {
+  width: 100%;
+
+  .ui-dialog {
+    width: 100%;
+  }
+}
+.ui-dialog-buttonpane {
+    width: 500px;
+    margin: -138px 0 0 356px;
+}
+
+.button {
+    height: 50px;
+    font-size: 30px;
+    color: red;
+    border: 2px solid;
+    width: 200px;
+    margin-top: -715px;
+    margin-left: 600px;}
+
+.ui-dialog-container {
+border: solid 1px black;
+width: 900px
+}
+
+.ui-dialog-buttonset{
+margin-top: -180px
+}

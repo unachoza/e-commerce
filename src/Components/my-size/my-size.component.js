@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './my-size.styles.scss';
 import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
+import CustomDialog from '../custom-dialog/custom-dialog.component'
 
 class MySize extends Component {
   constructor() {
@@ -22,9 +23,8 @@ class MySize extends Component {
       <div>
         <div className="mysize-title">
           <div>MY SIZE</div>
-          <CustomButton type="submit">WHAT'S MY SIZE </CustomButton>
-        </div>
-        {/* // onclick to model open to size "quiz" */}
+       {/* <CustomButton type="submit">WHAT'S MY SIZE </CustomButton> */}
+       <CustomDialog>
         <div>We help you find the right size</div>
         <div className="sub-title">We calculate the perfect fit based on your unique measurements</div>
       <div className="uclw-form">
@@ -33,6 +33,11 @@ class MySize extends Component {
           <FormInput type="text" label="weigth" value="" onChange={handleChange} label="Weight" required />
           <FormInput type="text" label="Preference" value="" onChange={handleChange} label="Preference" required />
         </div>
+      </CustomDialog>
+      </div>
+      
+        {/* // onclick to model open to size "quiz" */}
+      
       </div>
     );
   }
