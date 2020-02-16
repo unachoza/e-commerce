@@ -12,7 +12,8 @@ const AccountPage = ({ currentUser }) => (
     <div className="account-page">Hello, {currentUser.displayName.toUpperCase()} this is your Account</div>
     <div className="side-nav">
         <MySize />
-    <Orders />
+      <Orders />
+      <dialog close>This is an open dialog window</dialog>
     </div>
   
   </div>
