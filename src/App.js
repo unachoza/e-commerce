@@ -3,16 +3,17 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import HomePage from './Pages/homepage/Homepage';
 import ShopPage from './Pages/shop/shop.component';
-import AccountPage from './Pages/account/account.component'
-import ContactPage from './Pages/contact/contact.components'
+import AccountPage from './Pages/account/account.component';
+import ContactPage from './Pages/contact/contact.components';
 import Header from './Components/header/Header.component';
 import SignInAndSignUp from './Pages/Sign-in-and-sign-up/Sign-in-and-sign-up.component';
-import CheckoutPage from './Pages/checkout/checkout.component'
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import CheckoutPage from './Pages/checkout/checkout.component';
+import { auth, createUserProfileDocument, addCollectionAndDocuments } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.action';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import {selectCurrentUser} from './redux/user/user.selector'
+import { selectCurrentUser } from './redux/user/user.selector';
+import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -48,9 +49,9 @@ class App extends Component {
           <Route
             exact
             path="/signin"
-            render={() => this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />}
+            render={() => (this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />)}
           />
-          <Route path="/account"  render={() => !this.props.currentUser ? <Redirect to="/" /> : <AccountPage />}/>
+          <Route path="/account" render={() => (!this.props.currentUser ? <Redirect to="/" /> : <AccountPage />)} />
           <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
       </div>
@@ -60,6 +61,7 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionsForPreview,
 });
 
 const mapDispatchToProps = dispatch => ({
