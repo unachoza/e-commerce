@@ -13,7 +13,7 @@ const AccountPage = ({ currentUser }) => (
     <div className="side-nav">
         <MySize />
       <Orders />
-      <dialog close>This is an open dialog window</dialog>
+      <dialog close>Find Your Size</dialog>
     </div>
   
   </div>
