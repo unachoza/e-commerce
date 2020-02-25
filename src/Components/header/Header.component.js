@@ -18,7 +18,7 @@ const Header = ({ currentUser, hidden }) => (
       <OptionLink to="/shop">SHOP</OptionLink>
       <OptionLink to="/contact">CONTACT</OptionLink>
       {currentUser && (
-        <OptionLink as="div" to="/account">
+        <OptionLink to="/account">
           ACCOUNT
         </OptionLink>
       )}
