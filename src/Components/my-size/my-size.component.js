@@ -4,6 +4,11 @@ import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 import CustomDialog from '../custom-dialog/custom-dialog.component'
 
+
+const dialogContent = {
+  title: "We help you find the right size", 
+  content: "We calculate the perfect fit based on your unique measurements"
+}
 class MySize extends Component {
   constructor() {
     super();
@@ -23,11 +28,10 @@ class MySize extends Component {
       <div>
         <div className="mysize-title">
           <div>MY SIZE</div>
-       {/* <CustomButton type="submit">WHAT'S MY SIZE </CustomButton> */}
-       <CustomDialog>
-        <div>We help you find the right size</div>
-        <div className="sub-title">We calculate the perfect fit based on your unique measurements</div>
-      <div className="uclw-form">
+       <CustomButton type="submit">WHAT'S MY SIZE </CustomButton>
+       <CustomDialog dialogContent={dialogContent}>
+            <div className="uclw-form">
+              
        <div>MEASUREMENTS</div>
           <FormInput type="text" label="Height" value="" onChange={handleChange} label="height" required />
           <FormInput type="text" label="weigth" value="" onChange={handleChange} label="Weight" required />
