@@ -18,8 +18,7 @@ class ShopPage extends Component {
   componentDidMount() {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection('collections');
-
-    this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshop => {
+    collectionRef.get().then(snapshop => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshop);
       updateCollections(collectionsMap);
       this.setState({ loading: false });
@@ -28,7 +27,7 @@ class ShopPage extends Component {
 
   render() {
     const { match } = this.props;
-    const {loading} = this.state
+    const { loading } = this.state;
     return (
       <div className="shop-page">
         <Route

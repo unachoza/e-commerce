@@ -28,7 +28,7 @@ class MySize extends Component {
       <div>
         <div className="mysize-title">
           <div>MY SIZE</div>
-       <CustomButton type="submit">WHAT'S MY SIZE </CustomButton>
+      
        <CustomDialog dialogContent={dialogContent}>
             <div className="uclw-form">
               

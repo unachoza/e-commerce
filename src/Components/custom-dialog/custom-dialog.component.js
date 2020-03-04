@@ -3,7 +3,6 @@ import Dialog from 'react-dialog';
 import CustomButton from '../custom-button/custom-button.component';
 import './custom-dialog.styles.scss';
 
-
 //FROM MATERIAL UI
 class CustomDialog extends Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class CustomDialog extends Component {
   handleClose = () => this.setState({ isDialogOpen: false });
 
   render() {
-    console.log("these areprops on dialot", this.props)
+    console.log('these areprops on dialot', this.props);
     return (
       <div className="container">
         <CustomButton onClick={this.openDialog}>What's My Size</CustomButton>
@@ -35,10 +34,8 @@ class CustomDialog extends Component {
               },
             ]}
           >
-            <div style={{ width: "100%", flexDirection: 'column' }}>{this.props.dialogContent.title}</div>
-            <div className="dialog-content">
-           {this.props.dialogContent.content}
-            </div>
+            <div style={{ width: '100%', display: 'inline-block' }}>{this.props.dialogContent.title}</div>
+            <div className="dialog-content">{this.props.dialogContent.content}</div>
           </Dialog>
         )}
       </div>
