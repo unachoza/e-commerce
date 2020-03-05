@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import userReducer from './user/user.reducer'
 import cartReducer from './cart/cart.reducers'
+import menuReducer from './menu/menu.reducer'
 import directoryReducer from './directory/directory.reducer'
 import shopReducer from './shop/shop.reducer'
 import { persistReducer } from 'redux-persist'
@@ -16,6 +17,7 @@ const persistConfig = {
 const roodReducer =  combineReducers({
   user: userReducer,
   cart: cartReducer,
+  menu: menuReducer,
   directory: directoryReducer,
   shop: shopReducer
 })
