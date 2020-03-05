@@ -40,15 +40,8 @@ export const HamburgerMenu = styled.div`
     display: none;
   }
   @media screen and (max-width: 800px) {
-    width: 50px;
-    padding: 0;
+    display: flex;
+    
   }
 `;
-export const HamburgerIcon = styled.div`
-  height: 100%;
-  width: 70px;
-  @media screen and (max-width: 800px) {
-    width: 50px;
-    padding: 0;
-  }
-`;
+

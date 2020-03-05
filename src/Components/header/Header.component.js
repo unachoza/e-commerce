@@ -7,16 +7,18 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectMenuHidden } from '../../redux/menu/menu.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selector';
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink, HamburgerIcon } from './header.styles';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
 import { ReactComponent as Logo } from '../../assests/crown.svg';
 import HamburgerMenuButton from './HamburgerMenuButton.component';
+import MobileMenu from './MobileMenu.component';
 
-const Header = ({ currentUser, cartHidden }) => (
+const Header = ({ currentUser, cartHidden, menuHidden }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo className="logo" />
     </LogoContainer>
     <HamburgerMenuButton />
+    {menuHidden ? null : <MobileMenu />}
     <OptionsContainer>
       <OptionLink to="/shop">SHOP</OptionLink>
       <OptionLink to="/contact">CONTACT</OptionLink>
