@@ -8,7 +8,6 @@ export const CollectionItemContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
-border: red 4px solid;
   &:hover {
     .image {
       opacity: 0.8;
@@ -52,7 +51,6 @@ export const BackgroundImage = styled.div`
   background-position: center;
   margin-bottom: 5px;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-border: blue 4px solid;
 `;
 
 export const CollectionFooterContainer = styled.div`
