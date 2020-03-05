@@ -4,26 +4,23 @@ import { createStructuredSelector } from 'reselect';
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
-import { selectCartHidden, selectMenuHidden } from '../../redux/cart/cart.selectors';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+import { selectMenuHidden } from '../../redux/menu/menu.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selector';
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink, HamburgerIcon } from './header.styles';
 import { ReactComponent as Logo } from '../../assests/crown.svg';
-import HamburgerMenuButton from './HamburgerMenuButton.component'
+import HamburgerMenuButton from './HamburgerMenuButton.component';
 
 const Header = ({ currentUser, cartHidden }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo className="logo" />
     </LogoContainer>
-    <HamburgerMenuButton/>
+    <HamburgerMenuButton />
     <OptionsContainer>
       <OptionLink to="/shop">SHOP</OptionLink>
       <OptionLink to="/contact">CONTACT</OptionLink>
-      {currentUser && (
-        <OptionLink to="/account">
-          ACCOUNT
-        </OptionLink>
-      )}
+      {currentUser && <OptionLink to="/account">ACCOUNT</OptionLink>}
       {currentUser ? (
         <OptionLink as="div" onClick={() => auth.signOut()}>
           SIGN OUT
@@ -39,7 +36,7 @@ const Header = ({ currentUser, cartHidden }) => (
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   cartHidden: selectCartHidden,
-  menuHidden: selectMenuHidden
+  menuHidden: selectMenuHidden,
 });
 
 export default connect(mapStateToProps)(Header);

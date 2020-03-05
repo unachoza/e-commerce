@@ -7,17 +7,16 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  border: red 2px solid;
 `;
 
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
-  border: green 2px solid;
   @media screen and (max-width: 800px) {
     width: 50px;
     padding: 0;
+    margin: 14px;
   }
 `;
 
@@ -27,19 +26,29 @@ export const OptionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border: blue 3px solid;
   @media screen and (max-width: 800px) {
-   display: none;
+    display: none;
   }
 `;
-export const HamburgerMenu = styled.div`
-  @media screen and (max-width: 800px) {
-   display: none;
-  }
-`;
-
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
-  border: red 2px solid;
+`;
+
+export const HamburgerMenu = styled.div`
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+  @media screen and (max-width: 800px) {
+    width: 50px;
+    padding: 0;
+  }
+`;
+export const HamburgerIcon = styled.div`
+  height: 100%;
+  width: 70px;
+  @media screen and (max-width: 800px) {
+    width: 50px;
+    padding: 0;
+  }
 `;
