@@ -19,8 +19,7 @@ export const LogoContainer = styled(Link)`
     margin: 14px;
   }
 `;
-
-export const OptionsContainer = styled.div`
+export const MobileContainer = styled.div`
   width: 55%;
   height: 100%;
   display: flex;
@@ -29,6 +28,14 @@ export const OptionsContainer = styled.div`
   @media screen and (max-width: 800px) {
     display: none;
   }
+`;
+
+export const OptionsContainer = styled.div`
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
@@ -40,8 +47,7 @@ export const HamburgerMenu = styled.div`
     display: none;
   }
   @media screen and (max-width: 800px) {
-    display: flex;
-    
+    height: 100%;
+    display: block;
   }
 `;
-
