@@ -12,14 +12,12 @@ const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
 class ShopPage extends Component {
-  
   componentDidMount() {
     const { fetchCollectionsStartAsync } = this.props;
     fetchCollectionsStartAsync();
   }
 
   render() {
-    console.log("here id the match", this.props)
     const { match, isCollectionFetching, isCollectionLoaded } = this.props;
     return (
       <div className="shop-page">

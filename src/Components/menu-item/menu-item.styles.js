@@ -27,10 +27,12 @@ export const MenuItemContainer = styled.div`
   &:last-child {
     margin-left: 7.5px;
   }
-
-  @media screen and (max-width: 800px) {
+ @media screen and (max-width: 800px) {
     height: 200px;
+    width: 100%
+  
   }
+ 
 `;
 
 export const BackgroundImageContainer = styled.div`
@@ -39,7 +41,6 @@ export const BackgroundImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-
 `;
 
 export const ContentContainer = styled.div`
