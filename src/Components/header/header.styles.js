@@ -7,6 +7,11 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  @media screen and (max-width: 800px) {
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const LogoContainer = styled(Link)`
@@ -16,38 +21,21 @@ export const LogoContainer = styled(Link)`
   @media screen and (max-width: 800px) {
     width: 50px;
     padding: 0;
-    margin: 14px;
-  }
-`;
-export const MobileContainer = styled.div`
-  width: 55%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  @media screen and (max-width: 800px) {
-    display: none;
   }
 `;
 
 export const OptionsContainer = styled.div`
-  width: 55%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  @media screen and (max-width: 800px) {
+    width: 80%;
+  }
 `;
+
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
-`;
-
-export const HamburgerMenu = styled.div`
-  @media screen and (min-width: 800px) {
-    display: none;
-  }
-  @media screen and (max-width: 800px) {
-    height: 100%;
-    display: block;
-  }
 `;
